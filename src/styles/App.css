@@ -1,0 +1,171 @@
+/* .input-field {
+    border: none;
+    border-radius: 0.1rem;
+    padding: 0.5rem 0.5rem;
+    min-width: 20rem;
+    outline: none;
+    color: $text-color;
+    background-color: $bg-3-color;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:focus {
+        background-color: $bg-4-color;
+
+    }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bg-3-color inset;
+        -webkit-text-fill-color: $text-color;
+    }
+} */
+.input-container {
+  position: relative;
+  margin: 0.4rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+.input-container .static-label {
+  font-size: 12px;
+}
+.input-container .floating-label {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: rgb(209, 209, 222);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 1;
+  color: rgb(115, 115, 115);
+}
+.input-container.focused .floating-label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.6rem;
+  color: rgb(154, 154, 164);
+}
+.input-container .required-asterisk {
+  position: absolute;
+  /* right: 0rem;
+  top: -1rem; */
+  transform: none;
+  color: red;
+  font-size: 1rem;
+  z-index: 1;
+}
+.input-container .top-right {
+  right: 0rem;
+  top: 0rem;
+}
+.input-container .top-right-floating {
+  right: 0rem;
+  top: 0rem;
+  top: -1rem;
+}
+.input-container .top-left {
+  left: 0rem;
+  top: 0rem;
+  left: -0.6rem;
+}
+.input-container .top-left-floating {
+  left: 0rem;
+  top: 0rem;
+  top: -1rem;
+  left: 0rem;
+}
+.input-container .center-right {
+  right: 0rem;
+  bottom: 0rem;
+  right: -0.6rem;
+}
+.input-container .center-right-floating {
+  right: 0rem;
+  bottom: 0rem;
+  right: -0.6rem;
+}
+.input-container .center-left {
+  left: 0rem;
+  bottom: 0rem;
+  left: -0.6rem;
+}
+.input-container .center-left-floating {
+  left: 0rem;
+  bottom: 0rem;
+  left: -0.6rem;
+}
+.input-container .inside-right {
+  right: 0rem;
+  bottom: 0rem;
+}
+.input-container .inside-right-floating {
+  right: 0rem;
+  bottom: 0rem;
+}
+.input-container .inside-left {
+  left: 0rem;
+  bottom: 0rem;
+}
+.input-container .inside-left-floating {
+  left: 0rem;
+  bottom: 0rem;
+}
+.input-container .bottom-left {
+  left: 0rem;
+  bottom: 0rem;
+  top: 2.6rem;
+}
+.input-container .bottom-left-floating {
+  left: 0rem;
+  bottom: 0rem;
+  top: 1.3rem;
+}
+.input-container .bottom-right {
+  right: 0rem;
+  bottom: 0rem;
+  top: 2.6rem;
+}
+.input-container .bottom-right-floating {
+  right: 0rem;
+  bottom: 0rem;
+  top: 1.3rem;
+}
+.input-container .label-end {
+  left: 4.7rem;
+}
+
+.input-field {
+  border: none;
+  border-radius: 0.1rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  outline: none;
+  color: rgb(209, 209, 222);
+  background-color: rgb(52, 52, 56);
+}
+.input-field:hover {
+  background-color: rgb(68, 68, 72);
+}
+.input-field:hover .floating-label {
+  color: rgb(154, 154, 164);
+}
+.input-field:focus {
+  background-color: rgb(62, 62, 66);
+}
+.input-field:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(52, 52, 56);
+  -webkit-text-fill-color: rgb(209, 209, 222);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}/*# sourceMappingURL=App.css.map */

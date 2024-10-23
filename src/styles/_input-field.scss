@@ -1,0 +1,176 @@
+/* .input-field {
+    border: none;
+    border-radius: 0.1rem;
+    padding: 0.5rem 0.5rem;
+    min-width: 20rem;
+    outline: none;
+    color: $text-color;
+    background-color: $bg-3-color;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:focus {
+        background-color: $bg-4-color;
+
+    }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bg-3-color inset;
+        -webkit-text-fill-color: $text-color;
+    }
+} */
+.input-container {
+    position: relative;
+    margin: 0.4rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+
+    .static-label {
+        font-size: 12px;
+
+    }
+
+    .floating-label {
+        position: absolute;
+        top: 50%;
+        left: 0.5rem;
+        transform: translateY(-50%);
+        font-size: 0.8rem;
+        color: rgb(209, 209, 222);
+        pointer-events: none;
+        transition: all 0.2s ease;
+        z-index: 1;
+        color: rgb(115, 115, 115);
+
+    }
+
+    &.focused .floating-label {
+        top: -0.5rem;
+        left: 0.5rem;
+        font-size: 0.6rem;
+        color: rgb(154, 154, 164);
+    }
+
+    .required-asterisk {
+        position: absolute;
+        /* right: 0rem;
+        top: -1rem; */
+        transform: none;
+        color: red;
+        font-size: 1rem;
+        z-index: 1;
+    }
+
+    @mixin position($horizontal, $vertical, $floating-vertical: null) {
+        #{$horizontal}: 0rem;
+        #{$vertical}: 0rem;
+        @if $floating-vertical {
+          top: $floating-vertical;
+        }
+      }
+      
+      .top {
+        &-right {
+          @include position(right, top);
+          &-floating {
+            @include position(right, top, -1rem);
+          }
+        }
+        &-left {
+          @include position(left, top);
+          left: -0.6rem;
+          &-floating {
+            @include position(left, top, -1rem);
+            left: 0rem;
+          }
+        }
+      }
+      
+      .center {
+        &-right {
+          @include position(right, bottom);
+          right: -0.6rem;
+          &-floating {
+            @include position(right, bottom);
+            right: -0.6rem;
+          }
+        }
+        &-left {
+          @include position(left, bottom);
+          left: -0.6rem;
+          &-floating {
+            @include position(left, bottom);
+            left: -0.6rem
+          }
+        }
+      }
+      
+      .inside {
+        &-right {
+          @include position(right, bottom);
+          &-floating {
+            @include position(right, bottom);
+          }
+        }
+        &-left {
+          @include position(left, bottom);
+          &-floating {
+            @include position(left, bottom);
+          }
+        }
+      }
+      
+      .bottom {
+        &-left {
+          @include position(left, bottom, 2.6rem);
+          &-floating {
+            @include position(left, bottom, 1.3rem);
+          }
+        }
+        &-right {
+          @include position(right, bottom, 2.6rem);
+          &-floating {
+            @include position(right, bottom, 1.3rem);
+          }
+        }
+      }
+
+    .label-end {
+        left: 4.7rem;
+    }
+
+
+
+}
+
+.input-field {
+    border: none;
+    border-radius: 0.1rem;
+    padding: 0.35rem 0.5rem; // Justerat padding för att ge utrymme för label
+    font-size: 0.8rem;
+    outline: none;
+    color: rgb(209, 209, 222);
+    background-color: rgb(52, 52, 56);
+
+    &:hover {
+        background-color: rgb(68, 68, 72);
+
+        .floating-label {
+            color: rgb(154, 154, 164);
+        }
+    }
+
+    &:focus {
+        background-color: rgb(62, 62, 66);
+    }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px rgb(52, 52, 56);
+        -webkit-text-fill-color: rgb(209, 209, 222);
+    }
+}
